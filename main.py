@@ -290,27 +290,33 @@ class RenderThread(QThread):
                                 if (a1*a1)+(b1*b1) > Limit * 2:
                                     break
                             elif fractalType == "Ultra Hybrid":
+                                # Mandelbrot
                                 c = pow(c, float(PowerRe)) + c0
                                 if abs(c) >= Limit:
                                     break
                                 numIterations += 1
+                                # Burning Ship
                                 c = pow(abs(c.real) + 1j*abs(c.imag), float(PowerRe)) + c0
                                 if abs(c) >= Limit:
                                     break
                                 numIterations += 1
+                                # Tricorn / Mandelbar
                                 c = pow(np.conj(c), float(PowerRe)) + c0
                                 if abs(c) >= Limit:
                                     break
                                 numIterations += 1
+                                # Perpendicular Mandelbrot
                                 c = pow((abs(c.real) - c.imag * 1j), float(PowerRe)) + c0
                                 if abs(c) >= Limit:
                                     break
+                                # Perpendicular Burning Ship
                                 numIterations += 1
                                 c = pow((c.real + abs(c.imag) * 1j), float(PowerRe)) + c0
                                 if abs(c) >= Limit:
                                     break
                                 numIterations += 1
                             elif fractalType == "Psuedo Mandelbrot":
+                                # Basically the mandelbrot except using irrational power values can result in a different mandelbrot.
                                 c = c0-pow(c, float(PowerRe))
                                 if abs(c) >= Limit:
                                     break
