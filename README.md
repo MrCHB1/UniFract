@@ -27,3 +27,33 @@ numIterations += 1
 ```
 
 This example combines both the Mandelbrot and Tricorn fractals.
+
+You can also add in your own fractals by following these steps.
+
+Step 1) Look for the following code
+```
+...
+
+elif fractalType == "Custom":
+  ...
+```
+Step 2) Go to the top of this function and put in the following code snippet.
+```
+elif fractalType == "Your Fractal Name Here": # The name of your Fractal
+  # Here lies your custom formula
+...
+```
+
+Step 3) Once that's done, go to the last class of the code, and look for this:
+```
+FractalTypes = ["Mandelbrot", "Tricorn / Mandelbar", "Burning Ship", ... , "Custom"]
+```
+
+Go to the last item in the list, and type EXACTLY what the name of your custom fractal. If you dont do this, then the fractal you provided will not show up.
+
+E.G.
+```
+FractalTypes = [..., "Your Fractal Name Here", "Custom"]
+```
+
+And you are pretty much done! Enjoy your custom fractal!
