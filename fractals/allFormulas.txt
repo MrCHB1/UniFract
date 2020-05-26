@@ -1,0 +1,8 @@
+Mandelbrot          - c = pow(c, float(PowerRe)) + c0
+                      a2 = (a1*a1)-(b1*b1) + ax
+                      b2 = (2*a1*b1) + ay
+Tricorn / Mandelbar - c = pow(np.conj(c), float(PowerRe)) + c0
+                      a2 = (a1*a1)-(b1*b1) + ax
+                      b2 = (-2*a1*b1) + ay
+Burning Ship        - c = pow((abs(c.real)+1j*abs(c.imag)), float(PowerRe)) + c0
+Celtic Mandelbrot   - c = pow(((abs(c.real)+c.imag*1j)+c0/2), float(PowerRe))+pow(c0/2+(abs(c.real)+c.imag*1j), float(PowerRe))
