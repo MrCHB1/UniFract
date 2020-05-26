@@ -323,13 +323,13 @@ class RenderThread(QThread):
 
                             # Does not work, need a suggestion from contributors.
                             
-                            elif fractalType == "Custom":
-                                def custom(c, c0, Limit):
-                                    c = c+c0
-                                    if abs(c) >= Limit:
-                                        return 0
-                                    return c
-                                custom(c*c, c0, Limit)
+                            #elif fractalType == "Custom":
+                            #    def custom(c, c0, Limit):
+                            #        c = c+c0
+                            #        if abs(c) >= Limit:
+                            #            return 0
+                            #        return c
+                            #    custom(c*c, c0, Limit)
 
                         if numIterations < int(MaxIterations):
                             image.setPixel(x + halfWidth, y + halfHeight,
@@ -597,7 +597,7 @@ class Window(QMainWindow):
 
         # Tab 1 (Fractal)
 
-        FractalTypes = ["Mandelbrot", "Fast Mandelbrot", "Tricorn / Mandelbar", "Burning Ship", "Celtic Mandelbrot", "Celtic Mandelbar", "Mandelship", "Buffalo", "Perpendicular Mandelbrot", "Perpendicular Burning Ship", "Perpendicular Celtic", "Mandelbrot Heart", "Celtic Heart", "Ultra Hybrid", "Psuedo Mandelbrot", "Burning Ship Mandelbar", "Custom"]
+        FractalTypes = ["Mandelbrot", "Fast Mandelbrot", "Tricorn / Mandelbar", "Burning Ship", "Celtic Mandelbrot", "Celtic Mandelbar", "Mandelship", "Buffalo", "Perpendicular Mandelbrot", "Perpendicular Burning Ship", "Perpendicular Celtic", "Mandelbrot Heart", "Celtic Heart", "Ultra Hybrid", "Psuedo Mandelbrot", "Burning Ship Mandelbar"]
 
         FractalType = QComboBox(self)
         FractalType.addItems(FractalTypes)
