@@ -62,3 +62,4 @@ And you are pretty much done! Enjoy your custom fractal!
 
 Here are some screenshots from UniFract:
 ![Screenshot 1](https://github.com/MrCHB1/UniFract/blob/master/Screenshot%20from%202020-05-26%2008-45-55.png?raw=true)
+![Screenshot 2](https://github.com/MrCHB1/UniFract/blob/master/Screenshot%20from%202020-05-26%2008-48-47.png?raw=true)
