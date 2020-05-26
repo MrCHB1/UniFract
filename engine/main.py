@@ -38,6 +38,8 @@ PrecisionVal = "Single"
 
 StartingP = complex(float(StartRe), float(StartIm))
 
+# Testing very high precision (Performance issues, recommend a fast cpu)
+mp.dps = 20
 
 IsInverse = False
 
@@ -164,6 +166,10 @@ class RenderThread(QThread):
                         elif PrecisionVal == "Quadruple":
                             c = np.complex256(c)
                             c0 = np.complex256(c0)
+                        elif PrecisionVal == "Multiple":
+                            c = mp.mpc(c)
+                            c0 = mp.mpc(c0)
+                            # print(c0)
                         
                         numIterations = 0
 
@@ -686,7 +692,7 @@ class Window(QMainWindow):
         bailoutRadius.textChanged.connect(self.changeBailout)
         bailoutRadius.setValidator(QIntValidator())
 
-        precisionTypes = ["Single", "Double", "Triple", "Quadruple"]
+        precisionTypes = ["Single", "Double", "Triple", "Quadruple", "Multiple"]
 
         precision = QComboBox(self)
         precision.addItems(precisionTypes)
