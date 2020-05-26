@@ -57,6 +57,3 @@ FractalTypes = [..., "Your Fractal Name Here", "Custom"]
 ```
 
 And you are pretty much done! Enjoy your custom fractal!
-
-## Screenshots
-![Here are some screenshots from UniFract:](/Pictures/Screenshot from 2020-05-26 08-45-55.png)
