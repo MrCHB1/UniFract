@@ -69,7 +69,7 @@ class RenderThread(QThread):
 
     ColormapSize = 512
 
-    renderedImage = pyqtSignal(QImage, np.float128)
+    renderedImage = pyqtSignal(QImage, float)
 
     def __init__(self, parent=None):
         QThread.__init__(self)
