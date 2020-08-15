@@ -1,5 +1,12 @@
-# UniFract
-UniFract is a fractal explorer for PC devices.
+<h1 align="center">UniFract</h1>
+
+<p align="center">
+  <strong>A fractal explorer for PC devices.</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/MrCHB1/UniFract/releases"><img src="https://img.shields.io/github/downloads/MrCHB1/UniFract/total.svg?style=flat-square" alt="Github release"></a>
+</p>
 
 ## How to use
 To use the program, just copy the code, and paste it in the Python IDE. Requires version Python 3 or above.
