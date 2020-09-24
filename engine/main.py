@@ -148,7 +148,7 @@ class RenderThread(QThread):
 
                     for x in range(-halfWidth, halfWidth):
                         c0 = centerX + (x * scaleFactor) + ayy
-                        c = complex(Decimal(StartRe), Decimal(StartIm))
+                        c = Decimal(StartRe) + 1.0j*Decimal(StartIm)
 
                         ax = centerX + (x * scaleFactor)
                         a1 = ax
@@ -327,15 +327,12 @@ class RenderThread(QThread):
                                 if abs(c) >= Limit:
                                     break
 
-                            # Does not work, need a suggestion from contributors.
+                            # Testing out custom formulas.
                             
-                            #elif fractalType == "Custom":
-                            #    def custom(c, c0, Limit):
-                            #        c = c+c0
-                            #        if abs(c) >= Limit:
-                            #            return 0
-                            #        return c
-                            #    custom(c*c, c0, Limit)
+                            elif fractalType == "Custom":
+                                c = eval("z**2+c",{"z":c, "c":c0})
+                                if abs(c) >= Limit:
+                                    break
 
                         if numIterations < int(MaxIterations):
                             image.setPixel(x + halfWidth, y + halfHeight,
@@ -603,7 +600,7 @@ class Window(QMainWindow):
 
         # Tab 1 (Fractal)
 
-        FractalTypes = ["Mandelbrot", "Fast Mandelbrot", "Tricorn / Mandelbar", "Burning Ship", "Celtic Mandelbrot", "Celtic Mandelbar", "Mandelship", "Buffalo", "Perpendicular Mandelbrot", "Perpendicular Burning Ship", "Perpendicular Celtic", "Mandelbrot Heart", "Celtic Heart", "Ultra Hybrid", "Psuedo Mandelbrot", "Burning Ship Mandelbar"]
+        FractalTypes = ["Mandelbrot", "Fast Mandelbrot", "Tricorn / Mandelbar", "Burning Ship", "Celtic Mandelbrot", "Celtic Mandelbar", "Mandelship", "Buffalo", "Perpendicular Mandelbrot", "Perpendicular Burning Ship", "Perpendicular Celtic", "Mandelbrot Heart", "Celtic Heart", "Ultra Hybrid", "Psuedo Mandelbrot", "Burning Ship Mandelbar","Custom"]
 
         FractalType = QComboBox(self)
         FractalType.addItems(FractalTypes)
